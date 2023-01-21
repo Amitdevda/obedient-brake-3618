@@ -1,6 +1,11 @@
 *{
   text-align: center;
 }
+.size{
+    width: 80%;
+    margin: auto;
+    margin-top: 1.2%;
+}
 #nav1{
    display: flex;
    border: 2px solid red;
@@ -15,7 +20,7 @@
     border: 2px solid blue;
 }
 #logo>img{
-    width: 70%;
+    width: 80%;
 }
 #searchbar{
     border: 2px solid blueviolet;
@@ -50,7 +55,7 @@
     border: 2px solid violet;
     width: 40%;
 }
-#secndiv,#thrdiv,#fordiv{
+#secndiv,#thrdiv,#fordiv,#chapal{
     margin-top: 1.2%;
 }
 #category{
@@ -66,11 +71,66 @@
 #bear{
     border: 2px solid grey;
     display: flex;
-    width: 78%;
+    width: 80%;
     margin: auto;
     margin-top: 20px;
 }
 #bear img{
     width: 50%;
    
+}
+#court{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+#court>div img{
+    width: 100%;
+}
+#court>div h3{
+    font-size: 40px;
+}
+#chapal img{
+    width: 100%;
+}
+
+#brand{
+    display: flex;
+     border: 2px solid salmon;
+}
+#brand img{
+    width: 15%;
+    margin-left: 5px;
+    margin: auto;
+}
+#span{
+    display:flex;
+    width: 25%;
+    justify-content: space-around;
+}
+#p{
+    font-size: 40px;
+}
+#before_btm{
+    display:flex;
+    margin-top: 2%;
+    
+}
+#before_btm>div{ 
+    border-left: 1px solid gray;
+}
+#before_btm>div img{
+    width: 10%;
+}
+#before_btm>div p{
+    padding: 5px;
+}
+#hr{
+    border: 3px solid rgba(19, 118, 218, 0.639);
+}
+#foot{
+    background-color: #333f480e;
+}
+#footer>img{
+  width: 2%;
 }
