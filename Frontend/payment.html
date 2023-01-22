@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        * {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #pal {
+            width: 30%;
+            margin: auto;
+            margin-top: 10px;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            padding: 1px 0px 20px 0px;
+        }
+
+        #pal img {
+            width: 80%;
+            display: flex;
+            margin: auto;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: auto;
+        }
+
+        form>div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        form>div>div {
+            width: 35%;
+        }
+
+        input {
+            height: 25px;
+            margin-top: 3px;
+            margin-bottom: 10px;
+        }
+
+        input {
+            height: 30px;
+            width: 100%;
+            margin: auto;
+            border: 1px solid rgb(9, 118, 161);
+            background-color: aliceblue;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(49, 124, 153);
+            margin-top: 15px;
+            height: 35px;
+            border: none;
+            font-weight: bold;
+            border: 1px solid rgb(9, 118, 161);
+        }
+
+        input[type="submit"]:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        }
+
+        #otp {
+            height: 200px;
+            width: 200px;
+            margin-left: 100px;
+            margin-top: 60px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            background-color: aliceblue;
+            position: absolute;
+            display: none;
+        }
+
+        #val {
+            background-color: white;
+            border-radius: 4px;
+            border: 1px solid black;
+            width: 80%;
+            margin-left: 17px;
+        }
+
+        #otp button {
+            padding: 3px 30px;
+            margin-left: 52px;
+            margin-top: 20px;
+        }
+
+        #succ {
+            position: absolute;
+            width: 55%;
+            margin: auto;
+            margin-left: 68.5vh;
+            margin-top: 20vh;
+            display: none;
+        }
+
+        #succ img {
+            width: 60%;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+
+        #succ h2,
+        #succ p {
+            position: absolute;
+            text-align: center;
+            font-family: sans-serif;
+            color: white;
+        }
+
+        #succ h2 {
+            margin-left: 12px;
+            margin-top: 30px;
+        }
+
+        #succ p {
+            margin-top: -90px;
+            margin-left: 10vh;
+            font-size: 20px;
+        }
+
+        #succ h4 {
+            font-size: 15px;
+            margin-top: -30px;
+            margin-left: 18vh;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="nav1">
+        <div>
+            <div class="logo">
+                <a href="index.html"><img src="images/Urban eage png logo.png" alt="logo"></a>
+            </div>
+        </div>
+        <div>
+            <p class="cen">slier slide show display here offer 15%off seasonal</p>
+        </div>
+        <div id="icon">
+            <div id="account"><img src="https://cdn-icons-png.flaticon.com/512/3024/3024605.png" alt=""></div>
+            <h3 id="username"></h3>
+            <a href="cart.html"><div><img src="https://cdn-icons-png.flaticon.com/512/9296/9296822.png" alt=""></div></a>
+        </div>
+    </div>
+
+    <div id="acc">
+        <br>
+        <h1>ACCOUNT</h1><br>
+
+        <a href="login.html"><button class="sign">Sign In</button></a>
+        <a href="account.html"><button class="sign">Create Account</button></a><br>
+
+        <hr><br>
+        <h4>Real Rewards</h4><br>
+        <hr><br>
+        <h4>Account Settings</h4><br>
+        <hr><br>
+        <h4>Credit Card & Bill Pay</h4><br>
+        <hr><br>
+        <h4>Feedback</h4><br>
+        <hr><br>
+        <h4>Help <br> Call Us: 1 (888) 242 8754</h4><br>
+        <hr><br>
+        <h4>About Us</h4><br>
+        <hr><br>
+        <a href="admin.html">
+            <h4>Admin Section</h4>
+        </a>
+        <br>
+    </div>
+
+<br>
+
+
+    <div id="succ">
+        <h2>OTP Verified - Payment Successfully</h2>
+        <img src="images/paymet-succes-gif.gif" alt="">
+        <p>Thankyou for your Support ! <br>We look forward to serving you again.</p>
+        <h4>Go to <button id="recall">HOME</button> Or, Redirect in 8 seconds</h4>
+    </div>
+
+    <div id="pal">
+
+        <h1>Pay Invoice</h1>
+
+        <div id="otp">
+            <h2>OTP Verify</h2>
+            <input id="val" type="number" placeholder="Please Enter OTP Here">
+            <button id="ok">OK</button>
+        </div>
+
+        <img src="images/payment-logo.jpg" alt="">
+
+        <h3 id="in_date"></h3>
+        <h3 id="out_date"></h3>
+        <h2 id="displayed"></h2>
+
+        <form action="">
+            <label for="">Name On Card</label>
+            <input type="text" id="naam" placeholder="Enter Your Name">
+            <label for="">Card Number</label>
+            <input type="number" id="num" placeholder="Enter Card Number">
+            <div>
+                <div>
+                    <label for="">Expiry Date</label>
+                    <input id="cvv" type="text" placeholder="MM/YY">
+                </div>
+                <div>
+                    <label for="">CVV</label>
+                    <input type="text" id="exp" maxlength="3" placeholder="CVV">
+                </div>
+            </div>
+            <input id="sub" type="submit" value="Continue">
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let paaskey;
+    document.querySelector("#sub").addEventListener("click", my)
+
+    function my(e) {
+        e.preventDefault()
+        let naam = document.querySelector("#naam").value;
+        let num = document.querySelector("#num").value;
+        let cvv = document.querySelector("#cvv").value;
+        let exp = document.querySelector("#exp").value;
+
+        if (naam == "" || num == "" || cvv == "" || exp == "") {
+            alert("Please fill All the details")
+        }
+        else {
+            let ran = Math.floor(Math.random() * 9000 + 1000);
+            paaskey = ran
+            alert("Your OTP is : " + paaskey)
+            document.querySelector("#otp").style.display = "block";
+        }
+    }
+
+
+
+    let otpval = document.querySelector("#val")
+    document.querySelector("#ok").addEventListener("click", () => {
+        if (otpval.value == paaskey) {
+            document.querySelector("#otp").style.display = "none";
+            document.querySelector("#succ").style.display = "block"
+
+            setTimeout(() => {
+                location.href = "index.html"
+            }, 10000)
+        } else {
+            alert("Wrong OTP")
+        }
+    })
+    document.querySelector("#recall").addEventListener("click", () => {
+        window.location.href = "index.html"
+    })
+
+    let tota = JSON.parse(localStorage.getItem("amo"))
+    // let tota = JSON.parse(sessionStorage.getItem("amo"))
+
+    document.querySelector('#displayed').innerText = `Total Payment Amount : ₹ ${tota}`
+
+
+    // ---------------------------------------------Ls name------------------
+
+    let account = document.querySelector("#account")
+let ss = 1;
+account.addEventListener("click", () => {
+    if (ss == 1) {
+        ss = 0;
+        document.querySelector("#acc").style.display = "block"
+    } else {
+        ss = 1;
+        document.querySelector("#acc").style.display = "none"
+    }
+})
+
+let user_name = JSON.parse(sessionStorage.getItem("name"))
+
+document.querySelector("#username").innerText = user_name || "Welcome";
+    
+</script>

@@ -48,9 +48,6 @@
             background-color: aliceblue;
             color: black;
             /* visibility: hidden; */
-            display: none;
-            position: absolute;
-            margin-left: 20vh;
         }
 
         #adm_data>div{
@@ -155,11 +152,11 @@
     <div class="main">
         <div>
             <div id="adm_opt">
-                <div id="adm_1"><b>STATISTICS</b></div>
+                <a href="admin.html"><div id="adm_1"><b>STATISTICS</b></div></a>
                 <hr>
-                <div id="adm_2"><b>ADD THE PRODUCT</b></div>
+                <a href="admin.html"><div id="adm_2"><b>ADD THE PRODUCT</b></div></a>
                 <hr>
-                <a href="admin_data.html"><div id="adm_3"><b>SHOW ALL PRODUCT</b></div></a>
+                <div id="adm_3"><b>SHOW ALL PRODUCT</b></div>
             </div>
             <hr>
             <br>
@@ -203,29 +200,7 @@
         </div>
         <div>
 
-
-            <div id="stat">
-                <img src="images/stats.JPG" alt="">
-            </div>
-
-
-            <div id="form" style="width: 50%;">
-                <h2 class="cen">Add new Product</h2>
-                <br>
-                <label for="">Image link</label>
-                <input id="adm_img" type="text" placeholder="Enter Image Link">
-                <label for="">Product Title</label>
-                <input id="adm_title" type="text" placeholder="Enter Product Title">
-                <label for="">Category</label>
-                <select name="" id="adm_cate">
-                    <option value="Men">Men</option>
-                    <option value="Women">Women</option>
-                    <option value="Kid">Kid</option>
-                </select>
-                <label for="">Product Price</label>
-                <input id="adm_price" type="number" placeholder="Enter Product Price">
-                <button onclick="adddata()">Add Item</button>
-            </div>
+            <div id="adm_data"></div>
 
         </div>
     </div>
