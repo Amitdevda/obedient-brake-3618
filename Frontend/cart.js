@@ -20,7 +20,7 @@ let bag = []
 
 const cartdata = async (user_id) => {
 
-    await fetch(`http://localhost:4300/cart/showcart?userID=${user_id}`, {
+    await fetch(`https://nice-blue-basket-clam-gown.cyclic.app/cart/showcart?userID=${user_id}`, {
         headers: {
             "Authorization": sessionStorage.getItem("token")
         }
@@ -78,7 +78,7 @@ cartdata(user_id)
 async function remove_cart(element) {
     let id = element._id;
 
-    await fetch(`http://localhost:4300/cart/deletecart/${id}`, {
+    await fetch(`https://nice-blue-basket-clam-gown.cyclic.app/cart/deletecart/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": sessionStorage.getItem("token")

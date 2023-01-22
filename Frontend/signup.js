@@ -29,7 +29,7 @@ let register = async () => {
         password
     }
 
-    await fetch("http://localhost:4300/user/signup", {
+    await fetch("https://nice-blue-basket-clam-gown.cyclic.app/user/signup", {
         method: 'POST',
         headers: {
             "Content-type": "application/json"
@@ -60,7 +60,7 @@ const payload = {
     password
 }
 
-const fetchedData = await fetch("http://localhost:4300/user/login", {
+const fetchedData = await fetch("https://nice-blue-basket-clam-gown.cyclic.app/user/login", {
     method: "POST",
     headers: {
         "Content-type": "application/json"

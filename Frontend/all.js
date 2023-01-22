@@ -18,7 +18,7 @@ document.querySelector("#username").innerText = user_name || "Welcome";
 let bag
 const displaydata = async () => {
 
-    fetch("http://localhost:4300/pro/all", {
+    fetch("https://nice-blue-basket-clam-gown.cyclic.app/pro/all", {
         headers: {
             "Authorization": sessionStorage.getItem("token")
         }
@@ -123,34 +123,3 @@ function changer(sor) {
     })
     show(temp)
 }
-
-
-// let fil = document.querySelector("#subcate")
-// let sor = document.querySelector("#sorting")
-
-// sor.addEventListener("change",()=>{
-//     changer(sor.value,fil.value)
-// })
-// fil.addEventListener("change",()=>{
-//     changer(sor.value,fil.value)
-// })
-
-// function changer(sor,fil){
-//     let temp = bag.slice(0)
-//     temp = temp.filter((e)=>{
-//         return e.title==fil ||  fil=="";
-//     })
-
-//     temp = temp.sort((a,b)=>{
-//         if(sor=="asc"){
-//             return Number(a.price) - Number(b.price)
-//         }
-//         if(sor=="dsc"){
-//             return Number(b.price) - Number(a.price)
-//         }
-//         if(sor==""){
-//             return temp;
-//         }
-//     })
-//     show(temp)
-// }

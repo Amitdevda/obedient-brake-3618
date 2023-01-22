@@ -28,7 +28,7 @@ async function adddata() {
         price
     }
 
-    await fetch("http://localhost:4300/pro/add", {
+    await fetch("https://nice-blue-basket-clam-gown.cyclic.app/pro/add", {
         method: "POST",
         headers: {
             "Content-type": "application/json",
@@ -47,20 +47,6 @@ async function adddata() {
 
 }
 
-const display = async () => {
-
-    fetch("https://unusual-pike-parka.cyclic.app/posts/", {
-        headers: {
-            "Authorization": sessionStorage.getItem("token")
-        }
-    }).then(result => result.json()).then(data => {
-        output(data);
-    })
-        .catch(err => {
-            console.log(err);
-        })
-
-}
 
 function output(data) {
     document.querySelector("#cont").innerHTML = "";
@@ -105,30 +91,12 @@ function output(data) {
 }
 
 
-const deleting = async (id) => {
-
-    await fetch(`https://unusual-pike-parka.cyclic.app/posts/delete${id}`, {
-        method: "DELETE",
-        headers: {
-            "Authorization": sessionStorage.getItem("token")
-        }
-    }).then(result => {
-        result.json();
-        if (result.ok) {
-            location.href="admin_data.html"
-        }
-    }).catch(err => {
-        console.log(err);
-    })
-    // show();
-}
-
 // -----------------Renove by Admin---------------------------------------------
 
 
 const displaydata = async () => {
 
-    await fetch("http://localhost:4300/pro/all", {
+    await fetch("https://nice-blue-basket-clam-gown.cyclic.app/pro/all", {
         headers: {
             "Authorization": sessionStorage.getItem("token")
         }
@@ -192,7 +160,7 @@ async function adm_delepro(element) {
 
     let id = element._id;
 
-    await fetch(`http://localhost:4300/pro/delete/${id}`, {
+    await fetch(`https://nice-blue-basket-clam-gown.cyclic.app/pro/delete/${id}`, {
         method: "DELETE",
     }).then(result => {
         result.json();

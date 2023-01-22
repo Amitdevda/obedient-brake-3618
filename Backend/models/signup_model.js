@@ -9,6 +9,6 @@ const userSchema = mongoose.Schema({
     versionKey : false
 })
 
-const userModel = mongoose.model("fp_user",userSchema)
+const userModel = mongoose.model("UE_user",userSchema)
 
 module.exports = {userModel}
