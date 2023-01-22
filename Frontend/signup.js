@@ -10,6 +10,8 @@ account.addEventListener("click",()=>{
     }
 })
 
+
+
 // -----------create account-------------------------------------------------------------
 
 let register = async () => {
@@ -27,7 +29,7 @@ let register = async () => {
         password
     }
 
-    await fetch("https://localhost:4300/user/signup", {
+    await fetch("http://localhost:4300/user/signup", {
         method: 'POST',
         headers: {
             "Content-type": "application/json"
@@ -58,7 +60,7 @@ const payload = {
     password
 }
 
-const fetchedData = await fetch("https://localhost:4300/user/login", {
+const fetchedData = await fetch("http://localhost:4300/user/login", {
     method: "POST",
     headers: {
         "Content-type": "application/json"
@@ -74,5 +76,12 @@ if (fetchedData.ok) {
     alert("wrong credentials")
 }
 sessionStorage.setItem("token", data.token);
-
+localStorage.setItem("user", JSON.stringify(data.user));
+sessionStorage.setItem("name", JSON.stringify(data.name));
 }
+
+
+
+let user_name = JSON.parse(sessionStorage.getItem("name"))
+
+document.querySelector("#username").innerText = user_name || "Welcome";

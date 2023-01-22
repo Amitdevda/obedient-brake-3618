@@ -1,26 +1,220 @@
 let account = document.querySelector("#account")
 let ss = 1;
-account.addEventListener("click",()=>{
-    if(ss==1){
-        ss=0;
+account.addEventListener("click", () => {
+    if (ss == 1) {
+        ss = 0;
         document.querySelector("#acc").style.display = "block"
-    }else{
-        ss=1;
+    } else {
+        ss = 1;
         document.querySelector("#acc").style.display = "none"
     }
 })
 
+let user_name = JSON.parse(sessionStorage.getItem("name"))
+
+document.querySelector("#username").innerText = "ADMIN";
 // -----------------------------------------------------------------------
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '85f3a2b75dmsh7b81e77607b8697p1d9af6jsn45f407131aa7',
-		'X-RapidAPI-Host': 'v1-sneakers.p.rapidapi.com'
-	}
-};
+async function adddata() {
+    const image = document.querySelector("#adm_img").value;
+    const title = document.querySelector("#adm_title").value;
+    const category = document.querySelector("#adm_cate").value;
+    const price = document.querySelector("#adm_price").value;
 
-fetch('https://v1-sneakers.p.rapidapi.com/v1/sneakers?limit=%3CREQUIRED%3E', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+    const payload = {
+        image,
+        title,
+        category,
+        price
+    }
+
+    await fetch("http://localhost:4300/pro/add", {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json",
+        },
+        body: JSON.stringify(payload)
+    })
+        .then(result => {
+            result.json()
+            if (result.ok) { alert("Product live on Website") }
+        })
+        .then(data => {
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
+}
+
+const display = async () => {
+
+    fetch("https://unusual-pike-parka.cyclic.app/posts/", {
+        headers: {
+            "Authorization": sessionStorage.getItem("token")
+        }
+    }).then(result => result.json()).then(data => {
+        output(data);
+    })
+        .catch(err => {
+            console.log(err);
+        })
+
+}
+
+function output(data) {
+    document.querySelector("#cont").innerHTML = "";
+
+    if (data.length != 0) {
+
+        data.forEach(element => {
+
+            let div = document.createElement("div");
+
+            let title = document.createElement("h3");
+            title.innerText = `Title : ${element.title}`
+
+            let body = document.createElement("p");
+            body.innerText = `Notes : ${element.body}`;
+
+            let device = document.createElement("p");
+            device.innerText = `Category : ${element.device}`;
+
+            let edit = document.createElement("button");
+            edit.innerText = `Edit`;
+            edit.addEventListener("click", () => {
+                update(element._id);
+            })
+
+            let btn = document.createElement("button");
+            btn.innerText = `Delete`;
+
+            btn.addEventListener("click", () => {
+                deleting(element._id);
+            });
+
+            div.append(title, body, device, edit, btn);
+
+            document.querySelector("#cont").append(div);
+
+        });
+
+    } else {
+        document.querySelector("#cont").innerHTML = `<h2>No any Social Medial Appended, Please Append.</h2>`
+    }
+}
+
+
+const deleting = async (id) => {
+
+    await fetch(`https://unusual-pike-parka.cyclic.app/posts/delete${id}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": sessionStorage.getItem("token")
+        }
+    }).then(result => {
+        result.json();
+        if (result.ok) {
+            location.href="admin_data.html"
+        }
+    }).catch(err => {
+        console.log(err);
+    })
+    // show();
+}
+
+// -----------------Renove by Admin---------------------------------------------
+
+
+const displaydata = async () => {
+
+    await fetch("http://localhost:4300/pro/all", {
+        headers: {
+            "Authorization": sessionStorage.getItem("token")
+        }
+    }).then(result => result.json()).then(data => {
+        bag = data
+        show(data);
+    })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+
+function show(data) {
+    document.querySelector("#adm_data").innerHTML = "";
+    // console.log(data)
+
+    data.forEach(element => {
+
+        let div = document.createElement("div");
+
+        let image = document.createElement("img");
+        image.setAttribute("src", element.image)
+
+        let child = document.createElement("div");
+
+        let title = document.createElement("h3");
+        title.innerText = element.title
+
+        let category = document.createElement("p");
+        category.innerText = `Category : ${element.category}`;
+
+        let price = document.createElement("p");
+        price.innerText = `Price : ₹ ${element.price}`;
+        price.setAttribute("class", "rs")
+
+        let edit = document.createElement("button")
+        edit.innerText = "EDIT"
+
+        let dele = document.createElement("button")
+        dele.innerText = "DELETE"
+        dele.addEventListener("click", () => {
+            adm_delepro(element)
+        })
+
+
+        child.append(title, category, price, edit, dele);
+        div.append(image, child);
+
+        document.querySelector("#adm_data").append(div);
+
+    });
+}
+
+
+displaydata()
+
+
+
+async function adm_delepro(element) {
+
+    let id = element._id;
+
+    await fetch(`http://localhost:4300/pro/delete/${id}`, {
+        method: "DELETE",
+    }).then(result => {
+        result.json();
+        if (result.ok) {
+            displaydata()
+        }
+    }).catch(err => {
+        console.log(err);
+    })
+
+}
+
+
+let stat = document.querySelector("#adm_1")
+let add = document.querySelector("#adm_2")
+
+stat.addEventListener("click",()=>{
+    document.querySelector("#stat").style.display="block"
+    document.querySelector("#form").style.display="none"
+})
+
+add.addEventListener("click",()=>{
+    document.querySelector("#stat").style.display="none"
+    document.querySelector("#form").style.display="block"
+})
