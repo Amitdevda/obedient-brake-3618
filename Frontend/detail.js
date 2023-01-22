@@ -81,7 +81,7 @@ function add_to_bag(data) {
         price
     }
 
-    fetch("http://localhost:4300/cart/addcart", {
+    fetch("https://nice-blue-basket-clam-gown.cyclic.app/cart/addcart", {
         method: "POST",
         headers: {
             "Content-type": "application/json",
