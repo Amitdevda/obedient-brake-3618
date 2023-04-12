@@ -4,30 +4,20 @@
   </head>
   <body>
     <h1>Famouse Pair</h1>
-    <h2>Image Tags</h2>
-    <p>The following image tags have been used in the website:</p>
-    <ul>
-      <li>&lt;img&gt; tag for displaying product images</li>
-      <li>&lt;picture&gt; tag for providing responsive images</li>
-    </ul>
 
     <h2>Features for Users</h2>
-    <ul>
-      <li>The website is responsive and can be viewed on various devices</li>
-      <li>Users can browse and search for products</li>
-      <li>Users can also do functionality like sort by price, select categories</li>      
-      <li>Users can add products to their cart and checkout</li>
-      <li>The website includes a contact form for customers to get in touch with the store</li>
-    </ul>
+     <p>- The website is responsive and can be viewed on various device </p>
+     <p>- Users can browse and search for products </p>
+     <p>- Users can also do functionality like sort by price, select categories </p>      
+     <p>- Users can add products to their cart and checkout </p>
+     <p>- The website includes a contact form for customers to get in touch with the store </p>
 
     <h2>Features for Admin</h2>
-    <ul>
-      <li>Stats of website like sales, Growth etc in a Graphical respresentation</li>
-      <li>Admin can browse and search for products</li>
-      <li>Admin can also do functionality like sort by price, select categories</li>      
-      <li>Admin can Edit , Delete, Add the products</li>
-      <li>View as a User</li>
-    </ul>
+     <p>- Stats of website like sales, Growth etc in a Graphical respresentation</p>
+     <p>- Admin can browse and search for products</p>
+     <p>- Admin can also do functionality like sort by price, select categories</p>      
+     <p>- Admin can Edit , Delete, Add the products</p>
+     <p>- View as a User</p>
 
     <h2>Credits</h2>
     <p>The website was created by AMIT DEVDA</p>
