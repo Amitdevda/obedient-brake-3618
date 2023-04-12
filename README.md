@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Famouse Pair</title>
   </head>
   <body>
     <h1>Famouse Pair</h1>
